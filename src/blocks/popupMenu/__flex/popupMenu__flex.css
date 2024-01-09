@@ -1,0 +1,10 @@
+.popupMenu__flex{
+    margin:0;
+    padding:0;
+    padding-left:2vw;
+    padding-right: 2vw;
+    display: flex;
+    flex-direction: row;
+    margin-top:6.7vh;
+    justify-content: space-between;
+}

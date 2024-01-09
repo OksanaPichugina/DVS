@@ -1,0 +1,27 @@
+.reviews__carousel__img{
+    margin:0;
+    padding:0;
+    height: 70.2vh;
+    width: 30.9vw;
+    padding-left:1.4vw;
+    padding-right:1.4vw;
+}
+.carousel-root {
+    position: relative;
+  }
+  
+  .carousel-root .control-arrow {
+    font-size: 20px; /* Размер шрифта */
+    color: #fff; /* Цвет иконки */
+    background-color: rgba(0, 0, 0, 0.5); /* Цвет фона кнопки */
+    border: none; /* Убрать границу */
+    border-radius: 50%; /* Закругленные углы */
+    padding: 5px; /* Отступ внутри кнопки */
+    position: absolute; /* Позиционирование */
+    top: 50%; /* Вертикальное выравнивание */
+    transform: translateY(-50%); /* Смещение на половину высоты */
+  }
+  
+  .carousel-root .control-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Изменение цвета при наведении */
+  }

@@ -1,0 +1,37 @@
+.popupMenu__inputs__button {
+  margin: 0;
+  padding: 0;
+  border-radius: 40px;;
+  background-color: #3f62de;
+  font-family: Manrope;
+  font-size: 1.8vh;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: white;
+  padding-top: 1.3vh;
+  padding-bottom: 1.3vh;
+  border:0;
+}
+
+.popupMenu__inputs__button :hover {
+    opacity: 0.4;
+}
+
+.popupMenu__inputs__button_dop {
+  margin: 0;
+  padding: 0;
+  border-radius: 40px;;
+  background-color: #3f62de;
+  font-family: Manrope;
+  font-size: 1.8vh;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: white;
+  padding-top: 1.3vh;
+  padding-bottom: 1.3vh;
+  border:0;
+  width: 34.7vw;
+  margin-bottom: 30px;
+}

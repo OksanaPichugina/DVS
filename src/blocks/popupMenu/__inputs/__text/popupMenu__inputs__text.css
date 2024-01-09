@@ -1,0 +1,22 @@
+.popupMenu__inputs__text{
+    margin:0;
+    padding:0;
+    color: #262626;
+font-family: Manrope;
+font-size: 4vh;
+font-style: normal;
+font-weight: 500;
+line-height: 5.1vh; /* 127.778% */
+margin-bottom: 2px;
+}
+
+.popupMenu__inputs__text_min{
+    margin:0;
+    padding:0;
+    color:#BBB;
+font-family: Manrope;
+font-size: 2vh;
+font-style: normal;
+font-weight: 500;
+margin-bottom: 2.8vh;
+}

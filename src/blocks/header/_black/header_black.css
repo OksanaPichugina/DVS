@@ -1,0 +1,11 @@
+.header_black {
+  margin: 0;
+  padding: 0;
+  height: 3.3vh;
+  width: 100vw;
+  background-color: #262626;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

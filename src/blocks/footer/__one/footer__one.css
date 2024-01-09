@@ -1,0 +1,10 @@
+.footer__one{
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 25.6vh;
+    padding-top:3.3vh;
+}

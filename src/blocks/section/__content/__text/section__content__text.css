@@ -1,0 +1,11 @@
+.section__content__text {
+  MARGIN:0;
+  padding: 0;
+  color:  #262626;
+  font-family: Manrope;
+  font-size: 2.4vh;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 3.7vh; 
+  letter-spacing: 0.048vh;
+}

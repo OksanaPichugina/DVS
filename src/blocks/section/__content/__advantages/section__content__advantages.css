@@ -1,0 +1,8 @@
+.section__content__advantages{
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 71.5vw;
+}

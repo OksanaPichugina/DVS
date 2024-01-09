@@ -1,0 +1,15 @@
+.popupMenu__ul__text {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  color: #bbb;
+  font-family: Manrope;
+  font-size: 4vh;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 5.1vh;
+}
+
+.popupMenu__ul__text :hover{
+    color: black;
+}

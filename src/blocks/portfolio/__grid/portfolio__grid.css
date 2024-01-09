@@ -1,0 +1,16 @@
+.portfolio__grid{
+    margin:0;
+    padding:0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:1.4vw;
+}
+
+.portfolio__grid_dop{
+    margin:0;
+    padding:0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:1.4vw;
+    margin-left: 60px;
+}

@@ -1,0 +1,7 @@
+.header_hat__phrase{
+    margin:0;
+    padding:0;
+    height:18.2vh;
+    display: flex;
+    flex-direction: column;
+}

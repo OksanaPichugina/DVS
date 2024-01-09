@@ -1,0 +1,12 @@
+.header_hat__button {
+  height:14.4vh;
+  width: 14.4vh;
+  background-color: #3f62de;
+  border-radius: 80px;
+  border: none;
+  box-shadow: none;
+  position:fixed;
+  top: 38.5vh;
+  right: 2.08vw;
+  z-index: 1;
+}

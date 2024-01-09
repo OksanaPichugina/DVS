@@ -1,0 +1,15 @@
+.popup__form__name{
+    margin:0;
+    padding:0;
+    margin: 0;
+  padding: 0;
+  color:  black;
+  font-family: Manrope;
+  font-size: 2vh;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.035vh;
+  text-transform: uppercase;
+  padding-bottom:2vh;
+}
