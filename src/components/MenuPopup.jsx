@@ -5,8 +5,22 @@ import menuClose from "../images/menuClose.svg";
 import telephone from "../images/telephone.svg";
 import hatImg from "../images/hatImage.png";
 import { Link, animateScroll as scroll } from "react-scroll";
+import apiRes from '../utils/Api'
 
 export default function MenuPopup({ isOpen, closeAllPopups }) {
+  const [nameState, setNameState] = React.useState(""); 
+  const [telephoneState, seTtelephoneState] = React.useState(""); 
+  function handleSubmitService (){
+    apiRes 
+      .postFeedbackMethod(nameState,telephoneState)
+      .then((res) => { 
+        console.log(res); 
+      }) 
+      .catch((err) => { 
+        //попадаем сюда если один из промисов завершатся ошибкой 
+        console.log(err); 
+      }); 
+  }
   return (
     <div className={isOpen ? "popup__menu popup_opened" : "popup__menu"}>
       <div className="popupMenu">
@@ -90,27 +104,29 @@ export default function MenuPopup({ isOpen, closeAllPopups }) {
             <p className="popupMenu__inputs__text_min">
               Оставьте свои данные и мы вам перезвоним
             </p>
-            <div className="popup__input__container">
+            <form className="popup__input__container" onSubmit={handleSubmitService}>
               <input
-                name="avatar"
+                name="name"
                 id="name-input"
                 type="text"
                 className="popup__input"
                 placeholder="Ваше имя"
                 minLength="2"
                 required
+                onChange={(e) => { setNameState(e.target.value)}}
               />
               <input
-                name="avatar"
+                name="telephone"
                 id="telephone-input"
                 type="tel"
                 className="popup__input"
                 placeholder="Номер телефона"
                 minLength="2"
                 required
+                onChange={(e) => { seTtelephoneState(e.target.value)}}
               />
               <button className="popupMenu__inputs__button">Отправить</button>
-            </div>
+            </form>
           </div>
         </div>
       </div>

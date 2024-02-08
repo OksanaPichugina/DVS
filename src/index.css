@@ -84,4 +84,7 @@
 @import url(./blocks/popup/__form/_log/popup__form_log.css);
 @import url(./blocks/popup/__titile/_log/popup__title_log.css);
 @import url(./blocks/form/form.css);
-
+@import url(./blocks/section/__content/__advantages/__block/__text/_big/_img/section__content__advantages__block__text_big_img.css);
+@import url(./blocks/serviceElement/_delite/serviiceElement__delite.css);
+@import url(./blocks/header/_white/__2telephone/header_white__2telephone.css);
+@import url(./blocks/portfolioElement/_dop/portfolioElement_dop.css);

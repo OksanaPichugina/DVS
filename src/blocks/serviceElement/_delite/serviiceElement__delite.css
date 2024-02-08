@@ -1,0 +1,19 @@
+.serviceElement__delite{
+        position: relative; 
+        top: 20px; 
+        right: 20px; 
+        width: 18px; 
+        height: 19px; 
+        /* border: 0;  */
+        padding: 0; 
+        transition: all 0.2s; 
+        cursor: pointer; 
+        background: url(../../../images/trashBlack.jpeg); 
+        z-index: 2;
+}
+       
+.serviceElement__delite:hover { 
+        opacity: 0.5; 
+        transition: all 0.2s; 
+      } 
+       

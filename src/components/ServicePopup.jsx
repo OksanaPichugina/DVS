@@ -8,8 +8,8 @@ export default function ServicePopup({ card, closeAllPopups }) {
           onClick={closeAllPopups} 
           className="popup__close-button"></button>
         <div className="popup__form">
-          <p className="popup__form__name">{card ? card.name : ''}</p>
-          <p className="popup__form__about">{card ? card.about : ''}</p>
+          <p className="popup__form__name">{card ? card.offerName : ''}</p>
+          <p className="popup__form__about">{card ? card.offerDescription : ''}</p>
         </div>
       </div>
     </div>

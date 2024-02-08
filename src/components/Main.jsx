@@ -8,6 +8,7 @@ import Portfolio from "./Portfolio.jsx";
 import Reviews from "./Reviews.jsx";
 import MenuPopup from './MenuPopup.jsx'
 import ServicePopup from "./ServicePopup.jsx";
+import apiRes from '../utils/Api.js';
 
 export default function Main() {
 
@@ -27,6 +28,33 @@ export default function Main() {
     setMenuOpen(false)
   }
 
+  const [services, setServices] = React.useState([]);
+  const [portfolio, setPortfolio] = React.useState([]);
+  React.useEffect(() => { 
+    apiRes 
+      .getServiceMethod() 
+      .then((res) => { 
+        setServices(res.data); 
+      }) 
+      .catch((err) => { 
+        //попадаем сюда если один из промисов завершатся ошибкой 
+        console.log(err); 
+      }); 
+  }, []); 
+
+  React.useEffect(() => { 
+    apiRes 
+      .getPortfolioMethod() 
+      .then((res) => { 
+
+        setPortfolio(res.data); 
+      }) 
+      .catch((err) => { 
+        //попадаем сюда если один из промисов завершатся ошибкой 
+        console.log(err); 
+      }); 
+  }, []); 
+
 
   return (
     <div>
@@ -37,10 +65,10 @@ export default function Main() {
       <AboutUs  />
       </div>
       <div id='Services'>
-      <Services onServiceClick={handleServiceClick}  />
+      <Services onServiceClick={handleServiceClick} servicesBase={services} />
       </div>
       <div id='Portfolio'>
-      <Portfolio  />
+ ё <Portfolio  portfolioBase={portfolio} /> 
       </div>
       <Footer />
       <ServicePopup card={selectedService} closeAllPopups={closeAllPopups} />

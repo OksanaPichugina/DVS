@@ -9,4 +9,6 @@
   line-height: 7.2vh;
   letter-spacing: 0.4vh;
   text-transform: uppercase;
+  /* white-space: nowrap; */
+
 }

@@ -1,15 +1,30 @@
 import React from "react";
-export default function ServiceElement({card, onCardClick }){
-    function handleClick() { 
-        console.log(card)
-        onCardClick(card); 
-    } 
+import {apiResImg} from '../utils/Api.js';
+
+export default function ServiceElement({ card, onCardClick }) {
+    // function getImgByUuid (card){
+    //     apiResImg.getImgMethod(card.images[0].uuid)
+    //     .then((res) =>{
+    //         console.log(res)
+    //         return res.data
+    //     })
+    // }
+    function handleClick() {
+
+        onCardClick(card);
+    }
+
     return (
         <div className='serviceElement'>
-            <img src={card.link} className='serviceElement__img'/>
-            <p className='serviceElement__text'>{card.name}</p>
+            {
+  card.images && card.images[0] && (
+    <img src={'http://localhost:8080' + card.images[0].file} className='serviceElement__img' />
+  )
+}
+            {/* <img src={'http://localhost:8080' + card.images[0].file} className='serviceElement__img' /> */}
+            <p className='serviceElement__text'>{card.offerName}</p>
             <button className='serviceElement__button' onClick={handleClick}>Подробнее</button>
         </div>
     )
-    
+
 }

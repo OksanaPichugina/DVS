@@ -1,5 +1,5 @@
 import React from "react";
-
+import kran from '../images/kran.png'
 export default function AboutUs() {
   return (
     <div className="section">
@@ -30,7 +30,7 @@ export default function AboutUs() {
           <div className="section__content__advantages__block">
             <div className="section__content__advantages__block__underline">
               <p className="section__content__advantages__block__text_big">
-                60+
+                100+
               </p>
             </div>
             <p className="section__content__advantages__block__text">
@@ -40,7 +40,7 @@ export default function AboutUs() {
           <div className="section__content__advantages__block">
             <div className="section__content__advantages__block__underline">
               <p className="section__content__advantages__block__text_big">
-                &&
+               &&
               </p>
             </div>
             <p className="section__content__advantages__block__text">
