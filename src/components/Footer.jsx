@@ -1,5 +1,6 @@
 import React from "react";
 import logoFooter from "../images/logoFooter.svg";
+import footerLogoBLUE from '../images/logoBLUEFooter.svg'
 import { Link, animateScroll as scroll } from "react-scroll";
 
 export default function Footer() {
@@ -70,6 +71,7 @@ export default function Footer() {
         <div className="footer__two__block">
           <p className="footer__two__block__title">Телефон</p>
           <p className="footer__two__block__text">+7 (903) 045-68-12</p>
+          <p className="footer__two__block__text">+7 (845) 255-68-80</p>
         </div>
         <div className="footer__two__block">
           <p className="footer__two__block__title">Электронная почта</p>
@@ -77,7 +79,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer__three">
-        <img className="footer__three__img" src={logoFooter}></img>
+        <img className="footer__three__img" src={footerLogoBLUE}></img>
         <p className="footer__three__text">© ООО «ДВС» 2023</p>
       </div>
     </div>

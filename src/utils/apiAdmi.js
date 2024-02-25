@@ -33,7 +33,7 @@ export class Api {
             headers: this._headers,
             body: JSON.stringify({
                 "offerName": offerName,
-                "offerDescription": offerDescription,
+                "descriptionFileUuid": offerDescription,
                 "imagesUuids": [
                     imagesUuid
                 ]

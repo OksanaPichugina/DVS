@@ -2,6 +2,7 @@ import headerLogo from "../images/logo.svg";
 import menu from "../images/menu.svg";
 import telephone from "../images/telephone.svg";
 import hatImg from "../images/hatImage.png";
+import headerLogoBLUE from '../images/logoBLUE.svg';
 import React from "react";
 
 export default function Header(props) {
@@ -15,7 +16,7 @@ export default function Header(props) {
         <p className="hader_black__text">Саратов, ул. Окольная 3-я, 17/3</p>
       </div>
       <div className="header_white">
-        <img className="header_white__img" src={headerLogo}></img>
+        <img className="header_white__img" src={headerLogoBLUE}></img>
         <button className="header_white__button" onClick={handleClick}>
           <img className="header_white__button__img" src={menu}></img>
           <p className="header_white_text">Меню</p>

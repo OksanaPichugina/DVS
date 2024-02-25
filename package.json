@@ -16,6 +16,11 @@
     "react-scroll": "^1.9.0",
     "web-vitals": "^2.1.4"
   },
+  "browser": {
+    "fs": false,
+    "os": false,
+    "path": false
+  },
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",

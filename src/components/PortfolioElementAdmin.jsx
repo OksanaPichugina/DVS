@@ -1,11 +1,7 @@
 import React from "react";
 export default function PortfolioElementAdmin({card,apiRes }){
     function handleDeleteClick() { 
-        console.log(card.id)
         apiRes.deletePortfolioMethod(card.id)
-        .then((res)=>{
-            console.log(res)
-        })
       }
 
     return (

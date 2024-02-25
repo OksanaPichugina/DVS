@@ -9,8 +9,8 @@ export const BASE_URL = 'http://localhost:8080';
   
   
 export const authorize = (email ,password) => {
-    return fetch(`${BASE_URL}/auth`, { 
-      method: "GET", 
+    return fetch(`${BASE_URL}/account/auth`, { 
+      method: "POST", 
       headers: { 
         Accept: "application/json", 
         "Content-Type": "application/json",

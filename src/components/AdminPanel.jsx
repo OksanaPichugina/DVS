@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from "react";
 import ServiceElementAdmin from "./ServiceElementAdmin";
 import PortfolioElementAdmin from "./PortfolioElementAdmin";
-import ServicePopup from "./ServicePopup.jsx";
 import {Api} from '../utils/apiAdmi.js';
 
-
 export default function AdminPanel(props) {
-  
-  const [selectedService, setSelectedService] = React.useState(null);
   function makeBasicAuthHeader(email,password) {
     const BASE_URL = 'http://localhost:8080';
     const base64Credentials = btoa(`${email}:${password}`);
@@ -31,17 +27,6 @@ export default function AdminPanel(props) {
    
   const apiRes = new Api(api); 
   const apiResImg = new Api(api2)
-  
-
-  function onServiceClick(card) {
-
-    setSelectedService(card);
-  }
-  
-  function closeAllPopups() {
-    setSelectedService(null);
-    
-  }
 
   const [services, setServices] = React.useState([]);
   const [portfolio, setPortfolio] = React.useState([]);
@@ -49,7 +34,7 @@ export default function AdminPanel(props) {
     apiRes 
       .getServiceMethod() 
       .then((res) => { 
-        
+        console.log(res.data)
         setServices(res.data); 
       }) 
       .catch((err) => { 
@@ -70,11 +55,11 @@ export default function AdminPanel(props) {
       }); 
   }, []); 
 
-  const renderItems = () => {
-    return portfolio.map((item) => <PortfolioElementAdmin card={item} apiRes={apiRes}/>);
-  };
+  // const renderItems = () => {
+  //   return portfolio.map((item) => <PortfolioElementAdmin card={item} apiRes={apiRes}/>);
+  // };
 
-  function handleAddServiceSubmit(name, description,img) { 
+  function handleAddServiceSubmit(name, description, img) { 
     console.log(name,description,img)
     apiRes 
       .postServiceMethod(name, description,img)
@@ -88,13 +73,10 @@ export default function AdminPanel(props) {
   } ;
 
   function handleAddPortfolioSubmit(name, img) { 
-
     apiRes 
       .postPortfolioMethod(name, img)
       .then((res) => { 
-        console.log(res)
         setPortfolio([res.data, ...portfolio]); 
-        console.log(portfolio)
       }) 
       .catch((err) => { 
         //попадаем сюда если один из промисов завершатся ошибкой 
@@ -108,9 +90,7 @@ export default function AdminPanel(props) {
   const [portfolioImgState, setPortfolioimgState] = React.useState(''); 
   function handleSubmitService(e) { 
     // Запрещаем браузеру переходить по адресу формы 
-    e.preventDefault(); 
- 
-    // Передаём значения управляемых компонентов во внешний обработчик 
+    e.preventDefault();  
     handleAddServiceSubmit(serviceNameState,serviceDescriptionState,serviceImgState) 
   } 
 
@@ -136,6 +116,20 @@ export default function AdminPanel(props) {
     
   }
 
+  function postDescription(file) {
+    const formData = new FormData();
+    formData.append('file', file);
+    apiResImg.postImgMethod(formData)
+      .then((res) => { 
+        console.log(res);
+        setServiceDescriptionState(res.data.uuuid);
+      }) 
+      .catch((err) => { 
+        console.log(err); 
+      });
+    
+  }
+
   function postImagePortfolio(file) {
     const formData = new FormData();
     formData.append('file', file);
@@ -152,9 +146,11 @@ export default function AdminPanel(props) {
   
  
   const renderItemsBase = () => {
+    if (portfolio.length > 0 ) {
       return portfolio.map((item) => (
         <PortfolioElementAdmin card={item} apiRes={apiRes} />
       ));
+    }
     } 
   
 
@@ -183,13 +179,11 @@ export default function AdminPanel(props) {
           <input
             name="description"
             id="descriptionService-input"
-            type="text"
+            type="file" 
             placeholder="Описание"
-            minLength="2"
-            maxLength="400000"
             required
             className="popup__input popup__input_dop"
-            onChange={(e) => setServiceDescriptionState(e.target.value)} 
+            onChange={(e) => {postDescription (e.target.files[0])}} 
           />
           <input
             name="photo"
@@ -212,7 +206,7 @@ export default function AdminPanel(props) {
       <div className="portfolio__grid_dop">
       {services.map((item) => {
           return (
-            <ServiceElementAdmin card={item} onCardClick={onServiceClick} apiRes={apiRes} />
+            <ServiceElementAdmin card={item} apiRes={apiRes} />
           );
         })}
       </div> 

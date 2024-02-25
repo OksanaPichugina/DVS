@@ -2,15 +2,7 @@ import React from "react";
 import {apiResImg} from '../utils/Api.js';
 
 export default function ServiceElement({ card, onCardClick }) {
-    // function getImgByUuid (card){
-    //     apiResImg.getImgMethod(card.images[0].uuid)
-    //     .then((res) =>{
-    //         console.log(res)
-    //         return res.data
-    //     })
-    // }
     function handleClick() {
-
         onCardClick(card);
     }
 
