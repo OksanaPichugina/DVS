@@ -68,7 +68,7 @@ export default function Main() {
       <Services onServiceClick={handleServiceClick} servicesBase={services} />
       </div>
       <div id='Portfolio'>
- ё <Portfolio  portfolioBase={portfolio} /> 
+  <Portfolio  portfolioBase={portfolio} /> 
       </div>
       <Footer />
       <ServicePopup card={selectedService} closeAllPopups={closeAllPopups} />
